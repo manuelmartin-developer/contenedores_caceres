@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: lightgrey;
+    font-family: Arial, Helvetica, sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+	width: 95%;
+    margin: 5px;
+
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border: 1px solid black;
+	border-radius: 15px;
+  }
+
+#checkboxs{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+  /********************  CHECKBOX *********************/
+  .checkbox{
+ 
+	position: relative;
+	margin-top: 30px;
+    margin-left: 30px;
+	padding:5px 0 5px 60px;
+	display: block;
+	align-self: center;
+}
+
+
+.checkbox input{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+ 
+.checkbox input{
+	visibility: hidden;
+	position: absolute;
+	right: 0;
+}
+/* Estas reglas se aplicarán a todos las elementos i 
+después de cualquier input*/
+.checkbox input + i{
+       background: #f0f0f0;
+       border:2px solid rgba(0,0,0,0.2);
+       position: absolute; 
+       left: 0;
+       top: 0;
+}
+ 
+/* Estas reglas se aplicarán a todos los i despues 
+de un input de tipo checkbox*/
+.checkbox input[type=checkbox ] + i{
+	width: 52px;
+	height: 30px;
+	border-radius: 15px;
+}
+.checkbox input[type=checkbox] + i:before{
+	content: ''; /* No hay contenido */
+	width: 26px;
+	height: 26px;
+	background: #fff;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+	left: 3px;
+	top: 1px;
+	-webkit-box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
+	box-shadow: 3px 0 3px 0 rgba(0,0,0,0.2);
+}
+.checkbox input[type=checkbox]:checked + i:before{
+	left: 22px;
+	-webkit-box-shadow: -3px 0 3px 0 rgba(0,0,0,0.2);
+	box-shadow: 3px 0 -3px 0 rgba(0,0,0,0.2);
+}
+ 
+.checkbox input[id="organico"]:checked + i{
+ background: #E57E22;
+}
+.checkbox input[id="papel"]:checked + i{
+ background: #3498DB;
+}
+.checkbox input[id="envases"]:checked + i{
+ background: #F1C30E;
+}
+.checkbox input[id="vidrio"]:checked + i{
+ background: #2DCC71;
+}
+.checkbox input[id="aceite"]:checked + i{
+ background: #E74B3C;
+}
+.checkbox input[id="ropa"]:checked + i{
+ background: #9B59B6;
+}
+.checkbox input[type=checkbox] + i:after{
+	content: 'ON';
+	position: absolute;
+	font-size: 10px;
+	color: rgba(255,255,255,0.6);
+	top: 8px;
+	left: 4px;
+	opacity: 0 /* Ocultamos este elemento */;
+	transition: all 0.25s ease 0.25s;
+}
+ 
+/* Cuando esté checkeado cambiamos la opacidad a 1 y lo mostramos */
+.checkbox input[type=checkbox]:checked + i:after{
+ opacity: 1;
+}
