@@ -10,7 +10,7 @@ navigator.geolocation.watchPosition((position) => {
     '© <a href="https://www.mapbox.com/">Mapbox</a>';
 
   const ACCESS_TOKEN =
-    "pk.eyJ1IjoibW1hcnRpbmRqIiwiYSI6ImNrcjYxYnBnMzAxbXkydnBnemJ0eDBtZ2wifQ.JvTICi-_V8Uo5vgqyCjvfg";
+    "####";
   L.tileLayer(MAPBOX_API, {
     attribution: ATTRIBUTION,
     maxZoom: 22,
